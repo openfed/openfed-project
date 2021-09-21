@@ -1,6 +1,6 @@
 {
-    "name": "openfed/openfed8-project",
-    "description": "Project template for Drupal 8 sites built with the Openfed distribution.",
+    "name": "openfed/openfed-project",
+    "description": "Project template for Drupal 9 sites built with the Openfed distribution.",
     "type": "project",
     "license": "GPL-2.0-or-later",
     "authors": [
@@ -12,7 +12,7 @@
     "repositories": [
         {
             "type": "composer",
-            "url": "https://packages.drupal.org/8"
+            "url": "https://packages.drupal.org/9"
         }
     ],
     "require": {
