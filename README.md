@@ -1,5 +1,10 @@
 This is a project template for Drupal 9 sites built with the Openfed distribution.
 
+## Requirements
+
+- At least PHP 7.3 installed
+- Composer 2.0
+
 ## File Structure
 
 There are 2 json files:
