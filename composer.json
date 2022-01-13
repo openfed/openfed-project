@@ -51,7 +51,7 @@
             "docroot/modules/contrib/{$name}": [
                 "type:drupal-module"
             ],
-            "docroot/profiles/contrib/{$name}": [
+            "docroot/profiles/contrib/openfed": [
                 "type:drupal-profile"
             ],
             "docroot/themes/contrib/{$name}": [
@@ -76,6 +76,15 @@
     "config": {
         "platform": {
             "php": "7.3"
+        },
+        "allow-plugins": {
+            "simplesamlphp/composer-module-installer": true,
+            "composer/installers": true,
+            "oomphinc/composer-installers-extender": true,
+            "cweagans/composer-patches": true,
+            "drupal/console-extend-plugin": true,
+            "drupal/core-composer-scaffold": true,
+            "wikimedia/composer-merge-plugin": true
         }
     }
 }
