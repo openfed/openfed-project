@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-        "wikimedia/composer-merge-plugin": "^2.0"
+        "wikimedia/composer-merge-plugin": "*"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
