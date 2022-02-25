@@ -20,7 +20,9 @@
         }
     ],
     "require": {
-        "openfed/openfed": "11.x-dev"
+        "openfed/openfed": "11.x-dev",
+        "cweagans/composer-patches": "^1.7.0",
+        "szeidler/composer-patches-cli": "^1.0"
     },
     "require-dev": { },
     "scripts": {
@@ -80,6 +82,7 @@
                 "web-root": "./docroot"
             }
         },
-        "enable-patching": true
+        "enable-patching": true,
+        "patches-file": "composer.patches.json"
     }
 }

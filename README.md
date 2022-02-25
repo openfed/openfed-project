@@ -7,18 +7,22 @@ This is a project template for Drupal 9 sites built with the Openfed distributio
 
 ## File Structure
 
-There are 2 json files:
+There are 3 json files:
 
 ### composer.json
 
-This will be the main json file for your project, which you can use to require extra repositories.
+The main json file for your project, which you can use to require extra repositories.
 You can override this at your will, just make sure that **composer-merge-plugin** settings and package are kept in order to use the json files mentioned bellow.
 
 For more info about **composer-merge-plugin** settings and options check https://github.com/wikimedia/composer-merge-plugin
 
 ### composer.openfed.json
 
-This will include all Openfed related settings and should not be changed once you create your project. However, you should update this file regularly based on the most recent version in this repository.
+Includes all Openfed related settings and should not be changed once you create your project. However, you should update this file regularly based on the most recent version in this repository.
+
+### composer.patches.json
+
+Where all the specific patches for the project should be set. See bellow how to apply patches using the command line.
 
 ## Usage
 
@@ -63,6 +67,40 @@ The `composer create-project` command passes ownership of all files to the
 project that is created. You should create a new git repository, and commit
 all files not excluded by the .gitignore file.
 
+## Using Patches
+
+There's a composer.patches.json file which should be used to define all the needed patches for your project.
+It's possible to manage patches using the command line due to szeidler/composer-patches-cli library. See below some commands and check https://github.com/szeidler/composer-patches-cli for more info.
+
+### Patch Add
+```
+composer patch-add <package> <description> <url>
+```
+
+Example:
+```
+composer patch-add drupal/core "SA-CORE-2018-002" "https://cgit.drupalcode.org/drupal/rawdiff/?h=8.5.x&id=5ac8738fa69df34a0635f0907d661b509ff9a28f"
+```
+You can omit arguments for an interactive mode.
+
+### Patch Remove
+```
+composer patch-remove <package> <description>
+```
+
+Example:
+```
+composer patch-remove drupal/core "SA-CORE-2018-002"
+```
+You can omit arguments for an interactive mode.
+
+### Patch List
+```
+composer patch-list <package>
+```
+
+If the package argument is omitted, the command will return all defined patches.
+
 ## Troubleshooting
 
 ### Memory limit errors
@@ -81,4 +119,3 @@ If you are creating the project for the first time, use the recommended installa
 #### option 3
 
 Run "composer update" twice. At first it will throw the same error but on the second attempt it will run successfully.
-
