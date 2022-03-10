@@ -22,7 +22,8 @@ Includes all Openfed related settings and should not be changed once you create 
 
 ### composer.patches.json
 
-Where all the specific patches for the project should be set. See bellow how to apply patches using the command line.
+Where all the specific patches for the project should be set. This repo doesn't apply patches so this file will always be empty and it's here just to be used as a template or starting point.
+See bellow how to apply patches using the command line.
 
 ## Usage
 
