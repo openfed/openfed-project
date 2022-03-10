@@ -20,7 +20,7 @@
         }
     ],
     "require": {
-        "openfed/openfed": "11.x-dev",
+        "openfed/openfed": "^11.0",
         "cweagans/composer-patches": "^1.7.0",
         "szeidler/composer-patches-cli": "^1.0"
     },
@@ -35,7 +35,7 @@
         "post-update-cmd": [
             "composer install"
         ],
-        "openfed-update": [
+        "project-update": [
             "OpenfedProject\\composer\\OpenfedUpdate::update"
         ]
     },
