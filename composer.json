@@ -37,7 +37,7 @@
             "openfed-ckeditor-plugin",
             "openfed-ckeditor-template",
             "simplesamlphp-module",
-            "type:theme-library"
+            "theme-library"
         ],
         "installer-paths": {
             "docroot/core": [
