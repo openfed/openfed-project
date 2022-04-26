@@ -26,9 +26,6 @@
     },
     "require-dev": { },
     "scripts": {
-        "pre-update-cmd": [
-            "OpenfedProject\\composer\\OpenfedValidations::validateUpdate810"
-        ],
         "post-install-cmd": [
             "OpenfedProject\\composer\\ScriptHandler::createRequiredFiles"
         ],
@@ -47,7 +44,7 @@
             "openfed-ckeditor-plugin",
             "openfed-ckeditor-template",
             "simplesamlphp-module",
-            "type:theme-library"
+            "theme-library"
         ],
         "installer-paths": {
             "docroot/core": [
