@@ -48,7 +48,7 @@ You can delete the existing composer.libraries.json as it has been removed from 
 
 Since Openfed 8.x-10.0, there's a composer script (Experimental) which you can run in order to have your local project **partially** updated. To update your projects you can:
 - Backup your site
-- Run <pre>composer run-script openfed-update</pre>
+- Run <pre>composer run-script project-update</pre>
 - Manually update composer.json (it's recommended to use the composer.json from this repo and ajust it to use your projects/patches)
 - Run <pre>composer update</pre>
 

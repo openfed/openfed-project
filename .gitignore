@@ -9,6 +9,7 @@
 /docroot/libraries
 /docroot/sites/default/default.*
 /docroot/sites/example.*
+/docroot/sites/development.services.yml
 /docroot/sites/default/services.yml
 /docroot/sites/default/settings.php
 /docroot/sites/default/settings.local.php
