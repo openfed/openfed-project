@@ -20,7 +20,7 @@
         }
     ],
     "require": {
-        "openfed/openfed": "^11.1.x-dev",
+        "openfed/openfed": "11.1.x-dev",
         "cweagans/composer-patches": "^1.7.0",
         "szeidler/composer-patches-cli": "^1.0"
     },
