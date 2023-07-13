@@ -2,7 +2,7 @@ This is a project template for Drupal 9 sites built with the Openfed distributio
 
 ## Requirements
 
-- At least PHP 7.3 installed
+- At least PHP 8.1 installed
 - Composer 2.0
 
 ## File Structure
@@ -38,7 +38,7 @@ for your setup.
 After that you can create the project:
 
 ```
-composer create-project openfed/openfed-project:^11.1.0 MYPROJECT
+composer create-project openfed/openfed-project:^11.2.0 MYPROJECT
 ```
 
 ### Update
