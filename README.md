@@ -1,4 +1,4 @@
-This is a project template for Drupal 9 sites built with the Openfed distribution.
+This is a project template for Drupal 10 sites built with the Openfed distribution.
 
 ## Requirements
 
@@ -38,7 +38,7 @@ for your setup.
 After that you can create the project:
 
 ```
-composer create-project openfed/openfed-project:^11.2.0 MYPROJECT
+composer create-project openfed/openfed-project:~12.1.0 MYPROJECT
 ```
 
 ### Update
