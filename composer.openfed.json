@@ -34,6 +34,10 @@
         ],
         "project-update": [
             "OpenfedProject\\composer\\OpenfedUpdate::update"
+        ],
+        "project-upgrade": [
+            "OpenfedProject\\composer\\OpenfedValidations::validateUpdate12",
+            "OpenfedProject\\composer\\OpenfedUpdate::upgrade"
         ]
     },
     "extra": {
