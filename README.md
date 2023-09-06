@@ -54,6 +54,16 @@ Since Openfed 8.x-10.0, there's a composer script (Experimental) which you can r
 
 Your project should now be updated.
 
+### Upgrade
+
+Since Openfed11, there's a composer script (Experimental) which you can run in order to have your local project **partially** updated. To update your projects you can:
+- Backup your site
+- Run <pre>composer run-script project-upgrade -- fix</pre>. Note that there's a upgrade validation that run before changing any files. The "fix" argument will make fixes if the validation fails. To avoid automatic fixes you can remove this argument.
+- Manually update composer.json (it's recommended to use the composer.json from this repo and ajust it to use your projects/patches)
+- Run <pre>composer update</pre>
+
+Your project should now be updated.
+
 ### Require new modules
 
 With `composer require ...` you can download new dependencies to your
