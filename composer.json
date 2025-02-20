@@ -85,7 +85,8 @@
             "drupal/console-extend-plugin": true,
             "drupal/core-composer-scaffold": true,
             "wikimedia/composer-merge-plugin": true,
-            "szeidler/composer-patches-cli": true
+            "szeidler/composer-patches-cli": true,
+            "simplesamlphp/composer-xmlprovider-installer": true
         }
     }
 }
