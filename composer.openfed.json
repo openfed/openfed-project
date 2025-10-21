@@ -1,6 +1,6 @@
 {
     "name": "openfed/openfed-project",
-    "description": "Project template for Drupal 9 sites built with the Openfed distribution.",
+    "description": "Project template for Drupal 10 sites built with the Openfed distribution.",
     "type": "project",
     "license": "GPL-2.0-or-later",
     "authors": [
@@ -20,7 +20,7 @@
         }
     ],
     "require": {
-        "openfed/openfed": "12.3.*",
+        "openfed/openfed": "12.5.*",
         "cweagans/composer-patches": "^1.7.0",
         "szeidler/composer-patches-cli": "^1.0"
     },
