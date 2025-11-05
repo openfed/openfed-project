@@ -26,14 +26,14 @@
     },
     "require-dev": { },
     "scripts": {
-        "pre-update-cmd": [
-            "OpenfedProject\\composer\\OpenfedValidations::validateUpdate12"
-        ],
         "post-install-cmd": [
             "OpenfedProject\\composer\\ScriptHandler::createRequiredFiles"
         ],
         "post-update-cmd": [
             "composer install"
+        ],
+        "project-validate-update12": [
+            "OpenfedProject\\composer\\OpenfedValidations::validateUpdate12"
         ],
         "project-update": [
             "OpenfedProject\\composer\\OpenfedUpdate::update"
