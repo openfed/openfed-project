@@ -23,7 +23,8 @@
     "extra": {
         "merge-plugin": {
             "require": [
-                "composer.openfed.json"
+                "composer.openfed.json",
+                "docroot/modules/contrib/webform/composer.libraries.json"
             ],
             "recurse": true,
             "replace": false,
