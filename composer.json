@@ -23,7 +23,9 @@
     "extra": {
         "merge-plugin": {
             "require": [
-                "composer.openfed.json",
+                "composer.openfed.json"
+            ],
+            "include": [
                 "docroot/modules/contrib/ckeditor_codemirror/composer.libraries.json",
                 "docroot/modules/contrib/webform/composer.libraries.json"
             ],
