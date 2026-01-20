@@ -95,7 +95,7 @@ After running `composer create-project`, if you install a contrib module that ha
 Then run:
 
 ```
-composer update --lock
+composer update
 ```
 
 This will merge the library dependencies and download them to the appropriate location.
