@@ -68,6 +68,43 @@ The `composer create-project` command passes ownership of all files to the
 project that is created. You should create a new git repository, and commit
 all files not excluded by the .gitignore file.
 
+## Contrib Libraries ([composer-merge-plugin](https://github.com/wikimedia/composer-merge-plugin))
+
+This project uses the `wikimedia/composer-merge-plugin` to include additional Composer dependencies from contrib modules.
+
+### How it works
+
+Some contrib modules (like `ckeditor_codemirror` and `webform`) define their own library dependencies in a `composer.libraries.json` file. To have these dependencies installed, the path to the `composer.libraries.json` file must be added to the `merge-plugin.include` array in `composer.json`.
+
+### Adding new contrib library files
+
+After running `composer create-project`, if you install a contrib module that has a `composer.libraries.json` file, add it to the `merge-plugin.include` array in `composer.json`:
+
+```json
+"extra": {
+    "merge-plugin": {
+        "include": [
+            "docroot/modules/contrib/ckeditor_codemirror/composer.libraries.json",
+            "docroot/modules/contrib/webform/composer.libraries.json",
+            "docroot/modules/contrib/YOUR_MODULE/composer.libraries.json"
+        ]
+    }
+}
+```
+
+Then run:
+
+```
+composer update --lock
+```
+
+This will merge the library dependencies and download them to the appropriate location.
+
+### Notes
+
+- The merge only happens when the file exists, so entries for not-yet-installed modules won't cause errors.
+- Run `composer update` after adding new include paths to trigger the merge.
+
 ## Using Patches
 
 There's a composer.patches.json file which should be used to define all the needed patches for your project.
