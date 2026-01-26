@@ -24,7 +24,7 @@
         "cweagans/composer-patches": "^1.7.0",
         "szeidler/composer-patches-cli": "^1.0"
     },
-    "require-dev": { },
+    "require-dev": {},
     "scripts": {
         "post-install-cmd": [
             "OpenfedProject\\composer\\ScriptHandler::createRequiredFiles"
@@ -37,6 +37,9 @@
         ],
         "project-update": [
             "OpenfedProject\\composer\\OpenfedUpdate::update"
+        ],
+        "project-upgrade": [
+            "OpenfedProject\\composer\\OpenfedUpdate::upgrade"
         ]
     },
     "extra": {
