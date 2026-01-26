@@ -46,8 +46,7 @@
         "installer-types": [
             "openfed-ckeditor-plugin",
             "openfed-ckeditor-template",
-            "simplesamlphp-module",
-            "theme-library"
+            "simplesamlphp-module"
         ],
         "installer-paths": {
             "docroot/core": [
@@ -55,8 +54,7 @@
             ],
             "docroot/libraries/{$name}": [
                 "type:drupal-library",
-                "type:openfed-ckeditor-template",
-                "type:theme-library"
+                "type:openfed-ckeditor-template"
             ],
             "docroot/modules/contrib/{$name}": [
                 "type:drupal-module"

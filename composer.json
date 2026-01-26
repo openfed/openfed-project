@@ -16,6 +16,8 @@
         }
     ],
     "require": {
+        "composer/installers": "^2.3",
+        "oomphinc/composer-installers-extender": "^2.0",
         "wikimedia/composer-merge-plugin": "*"
     },
     "minimum-stability": "dev",
@@ -40,8 +42,7 @@
         "installer-types": [
             "openfed-ckeditor-plugin",
             "openfed-ckeditor-template",
-            "simplesamlphp-module",
-            "theme-library"
+            "simplesamlphp-module"
         ],
         "installer-paths": {
             "docroot/core": [
@@ -49,8 +50,7 @@
             ],
             "docroot/libraries/{$name}": [
                 "type:drupal-library",
-                "type:openfed-ckeditor-template",
-                "type:theme-library"
+                "type:openfed-ckeditor-template"
             ],
             "docroot/modules/contrib/{$name}": [
                 "type:drupal-module"
@@ -78,6 +78,7 @@
         }
     },
     "config": {
+        "sort-packages": true,
         "platform": {
             "php": "8.1"
         },
