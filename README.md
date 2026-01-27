@@ -137,6 +137,13 @@ Then run:
 composer require smillart/framework-sass-source-files
 ```
 
+##### .gitignore
+
+Add the following line to the project root .gitignore file to make sure we don’t commit these libraries in version control.
+```
+/docroot/themes/custom/*/libraries
+```
+
 ##### Why this is required
 
 Composer considers a package type “supported” only if an installer knows where to place it.
