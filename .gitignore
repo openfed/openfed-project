@@ -34,7 +34,7 @@
 /.gitattributes
 /README.md
 # Ignore other common stuff
-/docroot/themes/custom/*/libraries
+/docroot/themes/custom/*/_sass-framework
 /.idea
 /.vagrant
 

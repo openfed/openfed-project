@@ -123,7 +123,7 @@ The `theme-library` package type is used for frontend assets (for example Sass s
     "theme-library"
   ],
   "installer-paths": {
-    "docroot/themes/custom/<custom_theme>/libraries/{$name}": [
+    "docroot/themes/custom/<custom_theme>/{$name}": [
         "smillart/framework-sass-source-files"
     ]
   }
@@ -141,7 +141,7 @@ composer require smillart/framework-sass-source-files
 
 Add the following line to the project root .gitignore file to make sure we don’t commit these libraries in version control.
 ```
-/docroot/themes/custom/*/libraries
+/docroot/themes/custom/*/_sass-framework
 ```
 
 ##### Why this is required
