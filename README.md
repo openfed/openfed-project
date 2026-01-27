@@ -105,6 +105,51 @@ This will merge the library dependencies and download them to the appropriate lo
 - The merge only happens when the file exists, so entries for not-yet-installed modules won't cause errors.
 - Run `composer update` after adding new include paths to trigger the merge.
 
+### Custom Composer Installer Types
+
+This project defines and uses custom Composer installer types using:
+- [composer/installers](https://github.com/composer/installers)
+- [oomphinc/composer-installers-extender](https://github.com/oomphinc/composer-installers-extender)
+
+#### [_sass-framework](http://localhost:63342/openfed-libraries/dist/index.html?_ijt=ntb20e1e7u76n87snl82scem5f&_ij_reload=RELOAD_ON_SAVE#smillart%2Fframework-sass-source-files)
+
+The `theme-library` package type is used for frontend assets (for example Sass source files, JavaScript, or shared theme resources) that are not Drupal modules or themes themselves, but are consumed by themes.
+
+##### Installer configuration
+
+```json
+"extra": {
+  "installer-types": [
+    "theme-library"
+  ],
+  "installer-paths": {
+    "docroot/themes/custom/<custom_theme>/libraries/{$name}": [
+        "smillart/framework-sass-source-files"
+    ]
+  }
+}
+```
+This ensures that packages of type `theme-library` (including `smillart/framework-sass-source-files`) are installed in a predictable location.
+
+Then run:
+
+```
+composer require smillart/framework-sass-source-files
+```
+
+##### Why this is required
+
+Composer considers a package type “supported” only if an installer knows where to place it.
+Declaring an installer-type without an associated installer-path will result in the error:
+
+> ⚠️ **Package type "theme-library" is not supported**
+
+By defining both:
+- installer-types
+- and a matching installer-path
+
+Composer is able to resolve and install packages of type theme-library correctly.
+
 ## Using Patches
 
 There's a composer.patches.json file which should be used to define all the needed patches for your project.
