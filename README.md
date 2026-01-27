@@ -111,7 +111,7 @@ This project defines and uses custom Composer installer types using:
 - [composer/installers](https://github.com/composer/installers)
 - [oomphinc/composer-installers-extender](https://github.com/oomphinc/composer-installers-extender)
 
-#### [_sass-framework](http://localhost:63342/openfed-libraries/dist/index.html?_ijt=ntb20e1e7u76n87snl82scem5f&_ij_reload=RELOAD_ON_SAVE#smillart%2Fframework-sass-source-files)
+#### [_sass-framework](https://openfed.github.io/openfed-libraries/#sass)
 
 The `theme-library` package type is used for frontend assets (for example Sass source files, JavaScript, or shared theme resources) that are not Drupal modules or themes themselves, but are consumed by themes.
 
