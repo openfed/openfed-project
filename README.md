@@ -38,7 +38,7 @@ for your setup.
 After that you can create the project:
 
 ```
-composer create-project openfed/openfed-project:~13.6.0 MYPROJECT
+composer create-project openfed/openfed-project:~13.6.1 MYPROJECT
 ```
 
 ### Update
