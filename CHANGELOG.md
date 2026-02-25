@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+25 February 2026 - Version 12.6.2
+------------------------------
+- The composer-merge-plugin package version is now limited.
+
 03 February 2026 - Version 12.6.1
 ------------------------------
 - The "openfed-upgrade" script is now also included to facilitate major Openfed upgrades.
