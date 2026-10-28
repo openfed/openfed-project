@@ -1,9 +1,9 @@
-This is a project template for Drupal 10 sites built with the Openfed distribution.
+This is a project template for Drupal 11 sites built with the Openfed distribution.
 
 ## Requirements
 
-- At least PHP 8.1 installed
-- Composer 2.0
+- At least PHP 8.3 installed
+- Composer 2.7 or newer (required by Drupal 11)
 
 ## File Structure
 
@@ -38,7 +38,7 @@ for your setup.
 After that you can create the project:
 
 ```
-composer create-project openfed/openfed-project:~13.6.1 MYPROJECT
+composer create-project openfed/openfed-project:~14.0 MYPROJECT
 ```
 
 ### Update
@@ -109,7 +109,11 @@ This will merge the library dependencies and download them to the appropriate lo
 
 This project defines and uses custom Composer installer types using:
 - [composer/installers](https://github.com/composer/installers)
-- [oomphinc/composer-installers-extender](https://github.com/oomphinc/composer-installers-extender)
+- [mnsami/composer-custom-directory-installer](https://github.com/mnsami/composer-custom-directory-installer)
+
+Both plugins have to be enabled in `config.allow-plugins`, together with `symfony/runtime`, which Drupal 11.4 requires.
+
+The `theme-library` and `simplesamlphp-module` types are declared by default, so `smillart/framework-sass-source-files` is installed in `docroot/libraries/_sass-framework`. The example below only shows how to place it in a custom theme instead.
 
 #### [_sass-framework](https://openfed.github.io/openfed-libraries/#sass)
 
@@ -159,7 +163,17 @@ Composer is able to resolve and install packages of type theme-library correctly
 
 ## Using Patches
 
-There's a composer.patches.json file which should be used to define all the needed patches for your project.
+This project uses [Composer Patches 2](https://github.com/cweagans/composer-patches). The patches of the Openfed distribution are applied automatically. The specific patches of your project belong in `composer.patches.json`, referenced by `extra.composer-patches.patches-file`. The core patch depth is set in `extra.composer-patches.package-depths`.
+
+Both settings must stay in your root `composer.json`. Composer Patches 2 does not read them when they are merged in from `composer.openfed.json`, and without the depth the core patches don't apply.
+
+Composer Patches 2 stores the patches it resolved in `patches.lock.json`. Commit this file. After changing patches, run:
+
+```
+composer patches-relock
+composer patches-repatch
+```
+
 It's possible to manage patches using the command line due to szeidler/composer-patches-cli library. See below some commands and check https://github.com/szeidler/composer-patches-cli for more info.
 
 ### Patch Add

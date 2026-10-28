@@ -1,6 +1,6 @@
 {
     "name": "openfed/openfed-project",
-    "description": "Project template for Drupal 10 sites built with the Openfed distribution.",
+    "description": "Project template for Drupal 11 sites built with the Openfed distribution.",
     "type": "project",
     "license": "GPL-2.0-or-later",
     "authors": [
@@ -17,12 +17,17 @@
     ],
     "require": {
         "composer/installers": "^2.3",
-        "oomphinc/composer-installers-extender": "^2.0",
         "wikimedia/composer-merge-plugin": "^2.1"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "extra": {
+        "composer-patches": {
+            "package-depths": {
+                "drupal/core": 2
+            },
+            "patches-file": "composer.patches.json"
+        },
         "merge-plugin": {
             "require": [
                 "composer.openfed.json"
@@ -40,9 +45,8 @@
             "merge-scripts": true
         },
         "installer-types": [
-            "openfed-ckeditor-plugin",
-            "openfed-ckeditor-template",
-            "simplesamlphp-module"
+            "simplesamlphp-module",
+            "theme-library"
         ],
         "installer-paths": {
             "docroot/core": [
@@ -50,7 +54,7 @@
             ],
             "docroot/libraries/{$name}": [
                 "type:drupal-library",
-                "type:openfed-ckeditor-template"
+                "type:theme-library"
             ],
             "docroot/modules/contrib/{$name}": [
                 "type:drupal-module"
@@ -63,9 +67,6 @@
             ],
             "drush/contrib/{$name}": [
                 "type:drupal-drush"
-            ],
-            "docroot/libraries/ckeditor/plugins/{$name}": [
-                "type:openfed-ckeditor-plugin"
             ],
             "docroot/libraries/simplesamlphp/modules/{$name}": [
                 "type:simplesamlphp-module"
@@ -80,18 +81,19 @@
     "config": {
         "sort-packages": true,
         "platform": {
-            "php": "8.1"
+            "php": "8.3"
         },
         "allow-plugins": {
             "simplesamlphp/composer-module-installer": true,
             "composer/installers": true,
-            "oomphinc/composer-installers-extender": true,
+            "mnsami/composer-custom-directory-installer": true,
             "cweagans/composer-patches": true,
             "drupal/console-extend-plugin": true,
             "drupal/core-composer-scaffold": true,
             "wikimedia/composer-merge-plugin": true,
             "szeidler/composer-patches-cli": true,
-            "simplesamlphp/composer-xmlprovider-installer": true
+            "simplesamlphp/composer-xmlprovider-installer": true,
+            "symfony/runtime": true
         }
     }
 }
