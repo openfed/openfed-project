@@ -1,6 +1,6 @@
 {
     "name": "openfed/openfed-project",
-    "description": "Project template for Drupal 10 sites built with the Openfed distribution.",
+    "description": "Project template for Drupal 11 sites built with the Openfed distribution.",
     "type": "project",
     "license": "GPL-2.0-or-later",
     "authors": [
@@ -20,9 +20,9 @@
         }
     ],
     "require": {
-        "openfed/openfed": "13.6.*",
-        "cweagans/composer-patches": "^1.7.0",
-        "szeidler/composer-patches-cli": "^1.0"
+        "openfed/openfed": "14.0.*",
+        "cweagans/composer-patches": "^2.0",
+        "szeidler/composer-patches-cli": "^1.1.2"
     },
     "require-dev": {},
     "scripts": {
@@ -43,13 +43,9 @@
         ]
     },
     "extra": {
-        "patchLevel": {
-            "drupal/core": "-p2"
-        },
         "installer-types": [
-            "openfed-ckeditor-plugin",
-            "openfed-ckeditor-template",
-            "simplesamlphp-module"
+            "simplesamlphp-module",
+            "theme-library"
         ],
         "installer-paths": {
             "docroot/core": [
@@ -57,7 +53,7 @@
             ],
             "docroot/libraries/{$name}": [
                 "type:drupal-library",
-                "type:openfed-ckeditor-template"
+                "type:theme-library"
             ],
             "docroot/modules/contrib/{$name}": [
                 "type:drupal-module"
@@ -71,9 +67,6 @@
             "drush/contrib/{$name}": [
                 "type:drupal-drush"
             ],
-            "docroot/libraries/ckeditor/plugins/{$name}": [
-                "type:openfed-ckeditor-plugin"
-            ],
             "docroot/libraries/simplesamlphp/modules/{$name}": [
                 "type:simplesamlphp-module"
             ]
@@ -82,8 +75,6 @@
             "locations": {
                 "web-root": "./docroot"
             }
-        },
-        "enable-patching": true,
-        "patches-file": "composer.patches.json"
+        }
     }
 }
