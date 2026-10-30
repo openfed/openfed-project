@@ -1,3 +1,5 @@
+# Openfed project template
+
 This is a project template for Drupal 11 sites built with the Openfed distribution.
 
 ## Requirements
