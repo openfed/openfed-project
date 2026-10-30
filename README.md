@@ -41,6 +41,27 @@ After that you can create the project:
 composer create-project openfed/openfed-project:~14.0 MYPROJECT
 ```
 
+#### Second pass: run `composer update` once more
+
+A new project needs **two** Composer runs. The first run (`composer create-project`) downloads everything but does not finish: it stops with messages like these:
+
+```
+- Required package "codemirror/codemirror" is not present in the lock file.
+...
+Script composer install handling the post-update-cmd event returned with error code 4
+```
+
+This is expected. After the first run the project does not yet have a `docroot/sites/default/settings.php`, `services.yml` or `files` folder, and the JavaScript libraries of some contrib modules are missing. Finish the installation with:
+
+```
+cd MYPROJECT
+composer update
+```
+
+When the second run is done, `docroot/sites/default/settings.php` exists and the libraries are in `docroot/libraries`. The project is then ready for `drush site:install`.
+
+**Why:** modules like `webform` and `ckeditor_codemirror` list their JavaScript libraries in a `composer.libraries.json` file inside the module. This project merges those files with the `composer-merge-plugin` (see [Contrib Libraries](#contrib-libraries-composer-merge-plugin)), but they only exist once the modules are downloaded. The first run therefore creates a lock file without these libraries. When the project's `post-update-cmd` then runs `composer install`, it finds the libraries missing from the lock file and stops with error code 4 (Composer's "lock file invalid"). The second run includes them.
+
 ### Update
 
 The best is to download the latest version and replace your project with the files. If you have custom modules defined on your composer.json, you need to copy the to the new composer.json file.
@@ -75,6 +96,8 @@ This project uses the `wikimedia/composer-merge-plugin` to include additional Co
 ### How it works
 
 Some contrib modules (like `ckeditor_codemirror` and `webform`) define their own library dependencies in a `composer.libraries.json` file. To have these dependencies installed, the path to the `composer.libraries.json` file must be added to the `merge-plugin.include` array in `composer.json`.
+
+These files only exist after the module is downloaded, so on a new project the libraries are installed by the second `composer update` run. See [Second pass](#second-pass-run-composer-update-once-more).
 
 ### Adding new contrib library files
 
